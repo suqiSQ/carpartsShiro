@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<settings>
+		<!-- 手动开启二级缓存 -->
+		<setting name="cacheEnabled" value="true" />
+
+		<!-- 查询时，关闭关联对象即时加载以提高性能 -->
+		<setting name="lazyLoadingEnabled" value="false" />
+
+	</settings>
+	
+	<!-- mybatis和spring整合,由于spring本身就是一个ioc容器,所以
+	数据库连接信息（数据源、数据库连接池)交给spring来实例化
+	 -->
+	<typeAliases>
+		<!-- 两种方式:单个定义，批量定义 -->
+		<package name="com.yitian.sq.model" />
+		<package name="com.yitian.sq.vo"/>
+	</typeAliases>
+	
+
+</configuration>
